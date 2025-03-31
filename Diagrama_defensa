@@ -1,0 +1,58 @@
+# Diagrama del Sistema de Defensa Aérea (MBSE)
+
+```mermaid
+graph TD
+    subgraph Sistema de Defensa Aérea
+        direction LR
+        A[Detección y Seguimiento] --> B[Identificación y Evaluación de Amenazas]
+        B --> C[Centro de Comando y Control]
+        C --> D[Asignación de Recursos Defensivos]
+        D --> E[Intercepción y Neutralización]
+        E --> F[Evaluación Post-Intercepción]
+    end
+
+    subgraph Infraestructura y Recursos
+        G[Sensores: Radares AESA, EO/IR]
+        H[Plataformas Lanzadoras]
+        I[Suministro Energético Confiable]
+        J[Redes de Comunicación Seguras]
+        K[Software de Control Avanzado]
+        L[Personal Capacitado]
+        M[Mantenimiento y Logística]
+    end
+
+    subgraph Integración del Sistema
+        N[Estándares Internacionales: STANAG 4586, MIL-STD-6016]
+        O[Fusión de Datos Multisensorial]
+        P[Arquitectura Modular Abierta - MOSA]
+        Q[Interoperabilidad con Sistemas Aliados]
+    end
+
+    subgraph Evaluación del Sistema
+        direction LR
+        R[Verificación: Pruebas de Laboratorio, Simulaciones, Pruebas de Campo]
+        S[Validación: Ejercicios Operacionales Realistas]
+    end
+
+    G --> A
+    J --> C
+    K --> C
+    L --> C
+    H --> E
+    I -->|Alimenta| G
+    I -->|Alimenta| H
+    M -->|Soporta| H
+    M -->|Soporta| G
+    A --> O
+    O --> B
+    N --> Q
+    P -->|Permite adaptación tecnológica| Q
+    C -->|Apoyado por| Q
+    F --> R
+    R --> S
+    S -->|Realimentación de mejoras| C
+
+    classDef main fill:#ddebf7,stroke:#333,stroke-width:1px,font-weight:bold
+    classDef support fill:#f9cb9c,stroke:#333,stroke-width:1px
+    class A,B,C,D,E,F main
+    class G,H,I,J,K,L,M,N,O,P,Q,R,S support
